@@ -1,0 +1,38 @@
+To run with JamVM
+
+/**
+ * The run below run with initial heap size set at Xms and max heap size set at Xmx. verbose:gc provides gc verbosity. Don't use
+ * if you do not wont. Xcompactalways, always compacts the heap after every garbage collection. use Xnocompact instead if you never
+ * want the heap to be compacted.
+ */
+/path/to/jamvm -verbose:gc -Xms<size> -Xmx<size> -Xcompactalways -jar dacapo-9.12-MR1-bach-java6.jar <benchmark name>
+
+To run with CacaoJVM
+
+/**
+ * Similar with jamvm. Compaction options do not exist here. verbose:gc is valid however it does not print anything
+ */
+/path/to/cacaovm -verbose:gc -Xms<size> -Xmx<size> -jar dacapo-9.12-MR1-bach-java6.jar <benchmark name>
+
+To run with CacaoJVM
+
+/**
+ * Here we chose 3 threads instead of one, and verbose level 2
+ */
+/path/to/rvm -X:gc:verbose=2 -X:gc:threads=3 -X:gc:threads=3 \
+-Xms<size> -Xmx<size> -jar dacapo-9.12-MR1-bach-java6.jar <benchmark name>
+
+/**
+ * To print all boolean and value options, invoke with -X:gc:help
+ */
+ /path/to/rvm -X:gc:help
+ 
+ /**
+ * To see the default boolean and value options, invoke with -X:gc:printOptions
+ */
+ /path/to/rvm -X:gc:printOptions
+ 
+  /**
+ * To print other interesting gc values, invoke with -c MMTkCallback
+ */
+ /path/to/rvm -jar dacapo-9.12-MR1-bach-java6.jar <benchmark name> -c MMTkCallback
