@@ -1,0 +1,71 @@
+Works on Ubuntu 14.04 Environment on 64 bit architecture Intel or AMD.
+
+Download DaCapo Benchmark Suite
+
+Download from:
+-----------------------
+https://sourceforge.net/projects/dacapobench/files/9.12-bach-MR1/
+
+Download the dacapo-9.12-MR1-bach-java6.jar which is built with Java 6.
+
+--------------------------------------------------------------------------------------------
+
+Install GNU classpath
+
+Download from:
+-----------------------
+ftp://ftp.gnu.org/gnu/classpath
+
+Install when in the source using
+-----------------------
+./configure --disable-gtk-peer --disable-gconf-peer --disable-plugin
+make
+make install
+
+--------------------------------------------------------------------------------------------
+
+More Dependencies
+
+build-essential openjdk-6-jdk antlr texinfo zlib1g-dev git ant gcc g++ gcc-multilib g++-multilib bison automake gettext libtool
+
+--------------------------------------------------------------------------------------------
+
+Install JamVM
+
+Download from:
+-----------------------
+https://sourceforge.net/projects/jamvm/files/
+
+Install when in the source using
+-----------------------
+./configure
+make
+make install
+
+--------------------------------------------------------------------------------------------
+
+Install CacaoJVM
+
+Download from:
+-----------------------
+http://www.complang.tuwien.ac.at/cacaojvm/download/
+
+Install when in the source using
+-----------------------
+./configure --with-java-runtime-library-prefix=/usr/local/classpath --enable-jre-layout --prefix=/usr/local/classpath
+make
+make install
+
+--------------------------------------------------------------------------------------------
+
+Install Jikes RVM
+
+Download with git:
+-----------------------
+git clone https://github.com/JikesRVM/JikesRVM.git jikesrvm
+
+Install when in the source using
+-----------------------
+./configure --with-java-runtime-library-prefix=/usr/local/classpath --enable-jre-layout --prefix=/usr/local/classpath
+make
+make install
